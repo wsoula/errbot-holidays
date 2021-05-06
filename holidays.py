@@ -26,9 +26,7 @@ class Holidays(BotPlugin):
         }
         holidays = holiday_api.holidays(holiday_parameters)
         if 'holidays' in holidays:
-            if len(holidays['holidays']) == 0):
+            if len(holidays['holidays']) == 0:
                 return 'No holidays for '+str(year)+'-'+str(month)+'-'+str(day)
-            else:
-                return holidays['holidays'][0]['name']
-        else:
-            return holidays
+            return holidays['holidays'][0]['name']
+        return holidays
