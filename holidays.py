@@ -9,7 +9,7 @@ class Holidays(BotPlugin):
 
     @arg_botcmd('-y', type=int, dest='year', default=0)
     @arg_botcmd('-m', type=int, dest='month', default=0)
-    @arg_botcmd('-m', type=int, dest='day', default=0)
+    @arg_botcmd('-d', type=int, dest='day', default=0)
     def holiday(self, msg, year, month, day):
         if year == 0:
             year = int(datetime.now().strftime('%Y'))-int(os.getenv('YEAR_OFFSET'))
