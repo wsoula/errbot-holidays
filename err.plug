@@ -1,0 +1,9 @@
+[Core]
+Name = Holidays
+Module = holidays
+
+[Documentation]
+Description = Get holidays from https://holidayapi.com/
+
+[Python]
+Version = 3
