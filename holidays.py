@@ -20,4 +20,5 @@ class Holidays(BotPlugin):
             'day': day
         }
         holidays = holiday_api.holidays(holiday_parameters)
-        return holidays['holidays'][0]['name']
+        return holidays
+#        return holidays['holidays'][0]['name']
