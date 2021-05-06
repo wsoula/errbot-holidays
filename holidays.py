@@ -9,7 +9,7 @@ class Holidays(BotPlugin):
 
     @botcmd
     def holidays(self, msg, args):
-        year = datetime.now().strftime('%Y')
+        year = int(datetime.now().strftime('%Y'))-1
         month = datetime.now().strftime('%m')
         day = datetime.now().strftime('%d')
         holiday_api = holidayapi.v1(os.getenv('API_KEY'))
@@ -20,5 +20,7 @@ class Holidays(BotPlugin):
             'day': day
         }
         holidays = holiday_api.holidays(holiday_parameters)
-        return holidays
-#        return holidays['holidays'][0]['name']
+        if 'holidays' in holidays:
+            return holidays['holidays'][0]['name']
+        else:
+            return holidays
